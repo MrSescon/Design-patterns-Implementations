@@ -1,3 +1,5 @@
+import AbstractProductA from '../abstractProducts/abstractProductA'
+
 class ConcreteProductA2 implements AbstractProductA {
 
     public usefulFunctionA(): string {
@@ -5,3 +7,5 @@ class ConcreteProductA2 implements AbstractProductA {
     }
 
 }
+
+export default ConcreteProductA2

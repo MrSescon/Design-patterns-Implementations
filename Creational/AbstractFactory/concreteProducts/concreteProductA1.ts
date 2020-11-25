@@ -1,3 +1,7 @@
+/**
+ * These Concrete Products are created by corresponding Concrete Factories.
+ */
+
 import AbstractProductA from "../abstractProducts/abstractProductA";
 class ConcreteProductA1 implements AbstractProductA {
 
@@ -6,3 +10,5 @@ class ConcreteProductA1 implements AbstractProductA {
     }
 
 }
+
+export default ConcreteProductA1;
