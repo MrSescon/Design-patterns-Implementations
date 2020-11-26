@@ -1,3 +1,6 @@
+// Produtos concretos são criados por fábricas concretas
+// correspondentes.
+
 import Button from '../abstractProducts/button'
 class MacButton implements Button {
     paint(){
