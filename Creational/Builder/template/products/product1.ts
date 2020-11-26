@@ -14,3 +14,5 @@ class Product1 {
         console.log(`Product parts: ${this.parts.join(', ')}\n`)
     }
 }
+
+export default Product1
