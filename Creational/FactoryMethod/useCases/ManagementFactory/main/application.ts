@@ -1,23 +1,23 @@
-import Logistics from '../AbstractCreator/Logistics'
-import RoadLogistics from "../ConcreteCreators/roadLogistics"
-import SeaLogistics from "../ConcreteCreators/SeaLogistics"
+import Management from '../AbstractCreator/management'
+import RoadMaintenance from "../ConcreteCreators/roadMaintenance"
+import AviationMaintenance from '../ConcreteCreators/aviationMaintenance'
 
 // A aplicação seleciona um tipo de criador dependendo da
 // configuração atual ou definições de ambiente.
 
 class Application {
 
-    private logistics: Logistics
+    private management: Management
 
     // A aplicação seleciona um tipo de criador dependendo da
     // configuração atual ou definições de ambiente.
     public initialize(){
         const config = this.readApplicationConfigFile()
 
-        if (config.types === 'RoadLogistics') {
-            this.logistics = new RoadLogistics()
-        } else if (config.types === 'SeaLogistics') {
-            this.logistics = new SeaLogistics()
+        if (config.types === 'RoadMaintenance') {
+            this.management = new AviationMaintenance()
+        } else if (config.types === 'AviationMaitenance') {
+            this.management = new RoadMaintenance()
         } else
             throw 'Error!!! Unknown operating sytem.'
 
@@ -25,7 +25,7 @@ class Application {
 
     readApplicationConfigFile(){
         return {
-            types: 'RoadLogistics' || 'SeaLogistics'
+            types: 'RoadMaintenance' || 'AviationMaintenance'
         }
     }
 
@@ -36,6 +36,6 @@ class Application {
     // criadora.
     main(){
         this.initialize()
-        this.logistics.planDelivery()
+        this.management.maintenancePlan()
     }
 }

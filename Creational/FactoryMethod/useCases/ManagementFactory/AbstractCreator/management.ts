@@ -1,13 +1,13 @@
-import Transport from '../abstractProduct/transport'
+import Maintenance from '../abstractProduct/maintenance'
 
 // A classe criadora declara o método fábrica que deve retornar
 // um objeto de uma classe produto. As subclasses da criadora
 // geralmente fornecem a implementação desse método.
-abstract class Logistics {
+abstract class Management {
 
     // A criadora também pode fornecer alguma implementação
     // padrão do Factory Method.
-    public abstract createTransport(): Transport
+    public abstract createMaintenance(): Maintenance
 
     // Observe que, apesar do seu nome, a principal
     // responsabilidade da criadora não é criar produtos. Ela
@@ -16,12 +16,12 @@ abstract class Logistics {
     // fábrica. As subclasses pode mudar indiretamente essa
     // lógica de negócio ao sobrescreverem o método fábrica e
     // retornarem um tipo diferente de produto dele.
-    public planDelivery(): void {
+    public maintenancePlan(): void {
         // Chame o método fábrica para criar um objeto produto.
-        const transport = this.createTransport()
+        const maintenance = this.createMaintenance()
         // Agora use o produto.
-        transport.deliver()
+        maintenance.execute()
     }
 }
 
-export default Logistics
+export default Management
