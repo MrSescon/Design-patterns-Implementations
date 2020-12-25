@@ -1,6 +1,3 @@
-import Adapter from '../adapter/SquarePegAdapter'
-import Adaptee from '../adaptee/squarePeg';
-import Target from '../Target/RoundHole'
 import RoundHole from '../Target/RoundHole';
 import RoundPeg from '../Target/RoundPeg';
 import SquarePeg from '../adaptee/squarePeg';
